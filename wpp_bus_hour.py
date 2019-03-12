@@ -1,20 +1,26 @@
 from lxml import html
-import requests as req
+from bs4  import BeautifulSoup
+
+import re
+import urllib2  as url2
+import datetime as date
+
+current_time   = date.datetime.now()
+current_hour   = current_time.hour
+current_minute = current_time.minute
+current_hh_mm  = str(current_hour) + ":" + str(current_minute)
 
 url = 'http://www.realrodovias.com.br/?pagina=itinerariosPesquisa&detalhe=&linha=COMUNIDADE+02&tabela=horario&enviaConsulta=Consultar'
 
-page = req.get(url)
+regexHourMinute = '^([0-9]|0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$'
 
-html_tree = html.fromstring(page.content)
+html = url2.urlopen(url).read()
 
-hours = html_tree.xpath('//div[@id="horariosInt"]/text()')
+soup = BeautifulSoup(html, features = "lxml")
 
-print hours
+test = soup.find_all(":")
 
-
-' Pseudo code
-def getAllHours(html):
-	loop html as str:
-		if str[2] == ':':
-			add in hours
-	return hours
+for hour in soup(text=re.compile(regexHourMinute)):
+    if hour >= current_hh_mm:
+		print hour
+		break
