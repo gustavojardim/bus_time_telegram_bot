@@ -16,7 +16,8 @@ def send(msg, chat_id, token):
 	bot = telegram.Bot(token=token)
 	bot.sendMessage(chat_id=chat_id, text=msg)
 			
-my_token = '748715175:AAE7a1JQ-Hga5y2utDlyk0kXMuqS7QCAgHY'
+my_token   = 'telegram bot token'
+my_chat_id = 'telegram chat id'
 
 result = None
 
@@ -37,4 +38,4 @@ all_leave_times = soup(text=regex.compile(regexHourMinute))
 
 next_leave_time = find_next_leave_time(all_leave_times)
 
-send(next_leave_time, 155656277, my_token) 
+send(next_leave_time, my_chat_id, my_token) 
