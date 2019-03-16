@@ -1,5 +1,6 @@
-from bs4  				import BeautifulSoup
-from lxml 				import html
+from bs4   import BeautifulSoup
+from lxml  import html
+from flask import Flask
 
 import os
 import re 		as regex
@@ -13,6 +14,8 @@ TOKEN   = os.getenv('TELEGRAM_BOT_TOKEN')
 CHAT_ID = os.getenv('CHAT_ID')
 
 URL = 'http://www.realrodovias.com.br/?pagina=itinerariosPesquisa&detalhe=&linha=COMUNIDADE+02&tabela=horario&enviaConsulta=Consultar'
+
+app = Flask(__name__)
 
 def get_current_time():
 	current_time   = date.datetime.now()
@@ -35,7 +38,8 @@ def find_next_leave_time(all_leave_times):
 def send(msg, chat_id, token):
 	bot = telegram.Bot(token=token)
 	bot.sendMessage(chat_id=chat_id, text=msg)
-	
+
+@app.route('/')
 def main():
 	all_leave_times = get_all_leave_times()
 	
