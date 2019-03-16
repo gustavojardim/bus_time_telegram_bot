@@ -1,1 +1,1 @@
-web: gunicorn telegram_bus_bot:app --log-file=-
+web: gunicorn telegram-bot-bus:app --log-file=-
