@@ -1,1 +1,1 @@
-web: gunicorn telegram-bot-bus:app --log-file=-
+web: gunicorn telegram-bot-bus-hour:app
