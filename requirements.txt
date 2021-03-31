@@ -1,7 +1,7 @@
 urllib3==1.23
 beautifulsoup4==4.7.1
 bs4==0.0.1
-lxml==4.3.2
+lxml==4.6.3
 python-telegram-bot==11.1.0
 Flask==1.0.2
 gunicorn==19.9.0
