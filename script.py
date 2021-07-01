@@ -8,7 +8,6 @@ import telebot
 import requests
 				
 TOKEN   = os.getenv('TELEGRAM_BOT_TOKEN')
-CHAT_ID = os.getenv('CHAT_ID')
 
 bot = telebot.TeleBot(__name__)
 
