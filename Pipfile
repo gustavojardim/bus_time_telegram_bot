@@ -6,9 +6,9 @@ name = "pypi"
 [packages]
 bs4 = "*"
 lxml = "*"
-Flask = "*"
+telebot = "*"
 requests = "*"
-python-telegram-bot = "*"
+python-dotenv = "*"
 
 [dev-packages]
 
