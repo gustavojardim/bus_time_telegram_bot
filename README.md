@@ -1,4 +1,4 @@
-# Bus Hour via Telegram
+# Bus departure time via Telegram
 Telegram bot programmed in Python to search for the next depertature time of a particular bus line on a bus company site.
 
 ## Setup guide
