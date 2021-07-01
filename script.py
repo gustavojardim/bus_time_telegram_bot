@@ -1,4 +1,3 @@
-from threading import current_thread
 from bs4   	  	  import BeautifulSoup
 from flask 	      import Flask, Response
 from datetime 	  import datetime
